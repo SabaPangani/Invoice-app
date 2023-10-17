@@ -1,7 +1,9 @@
+import BillToBottom from "./BillToBottom";
+
 export default function BillTo() {
   return (
     <div>
-      <h2 className="text-purple-700 text-sm font-bold mb-7">Bill To</h2>
+      <h2 className="text-purple-700 text-md font-bold mb-7">Bill To</h2>
 
       <form className="flex flex-col text-white gap-y-5">
         <div className="form-control w-full">
@@ -30,10 +32,7 @@ export default function BillTo() {
             <input className="input" type="text" name="country" id="" />
           </div>
         </div>
-        <div className="form-control w-full">
-          <label htmlFor="address">Project Description</label>
-          <input className="input" type="text" name="projectDesc" id="" placeholder="e.g. Graphic Design Service"/>
-        </div>
+        <BillToBottom />
       </form>
     </div>
   );

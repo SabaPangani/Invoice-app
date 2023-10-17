@@ -1,9 +1,11 @@
 import BillFrom from "./BillFrom";
 import BillTo from "./BillTo";
+import ItemList from "./ItemList";
 
 interface Props {
     onShowForm: () => void
 }
+
 export default function InvoiceForm({onShowForm}: Props) {
 
   return (
@@ -15,6 +17,7 @@ export default function InvoiceForm({onShowForm}: Props) {
 
         <BillFrom />
         <BillTo />
+        <ItemList />
       </div>
     </>
   );

@@ -20,6 +20,16 @@ body{
     @apply flex flex-col w-[152px] gap-y-2 text-sm;
   }
   .input{
-    @apply bg-primary h-12 rounded px-8
+    @apply bg-primary h-12 rounded px-8 outline-none focus:outline-[#7C5DFA];
+  }
+  .before{
+    @apply before:w-60 before:h-0.5 before:bg-dark before:absolute before:-left-5 before:-bottom-3 before:opacity-40 relative;
+  }
+}
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
 }
