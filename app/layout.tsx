@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { League_Spartan } from "next/font/google";
-import SideBar from "./SideBar";
+import SideBar from "./sidebar/SideBar";
 
 const inter = League_Spartan({ subsets: ["latin"] });
 
@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <SideBar />
-        <main className="m-middle w-default">
+        <main className="m-middle sm:my-24 max-w-default w-3/4">
           {children}
         </main>
       </body>

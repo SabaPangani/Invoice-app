@@ -15,10 +15,13 @@ const config: Config = {
       },
       colors: {
         primary: "#1E2139",
+        dark: "#141625",
         btn: "#9277FF",
       },
       width: {
         default: "930px",
+        form: "616px",
+        32: "152px",
       },
       margin: {
         middle: "250px auto",

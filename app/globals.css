@@ -13,3 +13,13 @@ body{
   padding: 0;
   box-sizing: border-box;
 }
+
+
+@layer components {
+  .form-control{
+    @apply flex flex-col w-[152px] gap-y-2 text-sm;
+  }
+  .input{
+    @apply bg-primary h-12 rounded px-8
+  }
+}
