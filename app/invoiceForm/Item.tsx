@@ -44,7 +44,7 @@ export default function Item({
           onItemPriceChange(e);
         }}
       />
-      <span className="text-white mt-3">156.00</span>
+      <span className="text-white mt-3">{item.total}</span>
       <FaTrash
         className="mt-3 text-[#888EB0] hover:text-[#EC5757] cursor-pointer"
         onClick={onItemRemove}

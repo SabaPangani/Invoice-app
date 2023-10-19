@@ -1,11 +1,21 @@
 import BillToBottom from "./BillToBottom";
 
-export default function BillTo() {
+interface Props {
+  onBillToData: (billToData: any) => void;
+}
+export default function BillTo({ onBillToData }: Props) {
+
+  const sendBillToData = () => {
+    const billToData = {
+      
+    }
+  }
+
   return (
     <div>
       <h2 className="text-purple-700 text-md font-bold mb-7">Bill To</h2>
 
-      <form className="flex flex-col text-white gap-y-5">
+      <div className="flex flex-col text-white gap-y-5">
         <div className="form-control w-full">
           <label htmlFor="address">Client's Name</label>
           <input className="input" type="text" name="clientName" id="" />
@@ -33,7 +43,7 @@ export default function BillTo() {
           </div>
         </div>
         <BillToBottom />
-      </form>
+      </div>
     </div>
   );
 }

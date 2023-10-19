@@ -1,34 +1,26 @@
 import { ChangeEvent, useState } from "react";
 import { Item as ItemType } from "@/shared/types";
 import Item from "./Item";
-export default function ItemList() {
-  const [tmpItemsList, setTmpItems] = useState<ItemType[]>([]);
 
-  const tmpItemsListHandler = () => {
-    setTmpItems((prevItemsList: ItemType[]) => {
-      const maxId = prevItemsList.reduce(
-        (max, item) => (item.id > max ? item.id : max),
-        0
-      );
-
-      const newItem: ItemType = {
-        id: maxId + 1,
-        name: "",
-        quantity: 0,
-        price: 0,
-        total: 0,
-      };
-
-      return [...prevItemsList, newItem];
-    });
+interface Props {
+  items: ItemType[];
+  setItems: React.Dispatch<React.SetStateAction<ItemType[]>>;
+}
+export default function ItemList({ setItems, items }: Props) {
+  const itemAddHandler = (e: any) => {
+    e.preventDefault();
+    setItems((prevItemsList) => [
+      ...prevItemsList,
+      { name: "New Item", quantity: 0, total: 0, price: 0 },
+    ]);
   };
 
   const itemRemoveHandler = (id: number) => {
-    setTmpItems(tmpItemsList.filter((item) => item.id !== id));
+    setItems(items.filter((item, index) => index !== id));
   };
 
   const itemNameHandler = (e: ChangeEvent<HTMLInputElement>, i: number) => {
-    setTmpItems((prevItemsList) =>
+    setItems((prevItemsList) =>
       prevItemsList.map((item, index) => {
         if (index === i) {
           return {
@@ -41,7 +33,7 @@ export default function ItemList() {
     );
   };
   const itemQtyHandler = (e: ChangeEvent<HTMLInputElement>, i: number) => {
-    setTmpItems((prevItemsList) =>
+    setItems((prevItemsList) =>
       prevItemsList.map((item, index) => {
         if (index === i) {
           return {
@@ -55,7 +47,7 @@ export default function ItemList() {
     );
   };
   const itemPriceHandler = (e: ChangeEvent<HTMLInputElement>, i: number) => {
-    setTmpItems((prevItemsList) =>
+    setItems((prevItemsList) =>
       prevItemsList.map((item, index) => {
         if (index === i) {
           return {
@@ -82,7 +74,7 @@ export default function ItemList() {
           <span className="text-[13px] mr-10">Total</span>
         </div>
         <ul>
-          {tmpItemsList.map((item, i) => (
+          {items.map((item, i) => (
             <li>
               <Item
                 key={i}
@@ -104,7 +96,9 @@ export default function ItemList() {
           ))}
         </ul>
         <button
-          onClick={tmpItemsListHandler}
+          onClick={(e: any) => {
+            itemAddHandler(e);
+          }}
           className="text-center text-white font-bold text-md bg-primary w-full rounded-full py-3 mt-5"
         >
           + Add New Item

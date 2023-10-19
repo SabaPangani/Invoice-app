@@ -3,7 +3,7 @@ export default function BillFrom() {
     <div>
       <h2 className="text-purple-700 text-md font-bold mb-7">Bill From</h2>
 
-      <form className="flex flex-col text-white gap-y-5">
+      <div className="flex flex-col text-white gap-y-5">
         <div className="form-control w-full">
           <label htmlFor="address">Street Address</label>
           <input className="input" type="text" name="address" id="" />
@@ -22,7 +22,7 @@ export default function BillFrom() {
             <input className="input" type="text" name="country" id="" />
           </div>
         </div>
-      </form>
+      </div>
     </div>
   );
 }
