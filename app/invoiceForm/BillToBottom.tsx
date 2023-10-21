@@ -14,7 +14,7 @@ export default function BillToBottom() {
         <label htmlFor="address">Project Description</label>
         <input
           className="input"
-          type="text"
+          type="text" 
           name="projectDesc"
           id=""
           placeholder="e.g. Graphic Design Service"
