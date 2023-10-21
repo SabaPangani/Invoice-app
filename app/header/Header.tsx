@@ -6,18 +6,41 @@ interface Props {
 }
 export default function Header({ onShowForm }: Props) {
   const data = {
-    id: 1,
-    clientAddressId: 1,
-    clientEmail: "spangani37@gmail.com",
-    clientName: "saba",
-    createdAt: new Date(2020),
-    description: "wasd",
-    holderId: 1,
-    paymentDue: new Date(2020),
-    paymentTerms: 20,
-    senderAddressId: 1,
+    createdAt: "2023-10-20T08:00:00Z",
+    paymentDue: "2023-10-30T08:00:00Z",
+    description: "Sample invoice description",
+    paymentTerms: 30,
+    clientName: "Client Name",
+    clientEmail: "client@example.com",
     status: "Pending",
-    total: 20,
+    holderId: 1,
+    senderAddress: {
+      street: "123 Main St",
+      city: "Sample City",
+      postCode: "12345",
+      country: "Sample Country",
+    },
+    clientAddress: {
+      street: "456 Elm St",
+      city: "Client City",
+      postCode: "54321",
+      country: "Client Country",
+    },
+    items: [
+      {
+        name: "Item 1",
+        quantity: 2,
+        price: 10.0,
+        total: 20.0,
+      },
+      {
+        name: "Item 2",
+        quantity: 3,
+        price: 15.0,
+        total: 45.0,
+      },
+    ],
+    total: 65.0,
   };
   return (
     <>
