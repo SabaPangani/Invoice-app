@@ -1,3 +1,4 @@
+## Couldn't finish cuz during this project I started my internship but main setup and logic is finished.
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
